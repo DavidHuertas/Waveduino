@@ -1,0 +1,5 @@
+%LIMPIEZA DE VARIABLES, PANTALLA, CIERRE DE VENTANAS
+
+clc
+clear all
+close all

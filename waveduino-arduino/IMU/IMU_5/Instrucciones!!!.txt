@@ -1,0 +1,22 @@
+En este sketch, sólo se emiten los datos del acelerómetro y los del giroscopio, línea a línea:
+
+k
+ax
+ay
+az
+gx
+gy
+gz
+k
+ax
+ay
+az
+gx
+gy
+gz
+k
+ax
+.
+.
+.
+.

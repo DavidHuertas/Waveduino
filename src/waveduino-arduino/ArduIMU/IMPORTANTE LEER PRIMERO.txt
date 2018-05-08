@@ -1,0 +1,5 @@
+Aquí se encuentra el archivo con el sketch a cargar en Arduino NANO.
+
+Para leer dicho sketch puede abrirlo con el bloc de notas pero lo abrirá sin saltos de línea, siendo bastante difícil de leer.
+
+La otra opción es instalar el IDE de Arduino, que se puede descargar de http://arduino.cc/es/main/software , y leerlo desde ahí.

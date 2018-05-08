@@ -1,0 +1,17 @@
+Éste es el directorio con el contenido de los archivos del programa Waveduino para MATLAB. Para leer bien el programa:
+
+- Copie esta carpeta fuera del CD en el que viene, en el directorio que usted elija.
+
+- Abra MATLAB y acceda al directorio donde ha copiado dicha carpeta.
+
+- Haga click derecho sobre el archivo waveduino.f y elija "Open with GUIDE"
+
+- Ejecute el programa pulsando la tecla F5 ó el botón RUN de la pantalla de GUIDE.
+
+Para cargar los datos de la toma 7 ó de la toma 8 (ver carpeta "Datos"):
+
+-Copie el archivo de datos toma7_final ó toma8_final
+
+-Sustituya el archivo "medicion" en el directorio principal por la toma de datos elegida. Cambie el nombre del archivo a "medicion"
+
+-Así el programa leerá la toma de datos elegida.

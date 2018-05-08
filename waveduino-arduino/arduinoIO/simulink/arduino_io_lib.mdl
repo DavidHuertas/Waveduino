@@ -1,0 +1,685 @@
+Library {
+  Name			  "arduino_io_lib"
+  Version		  7.1
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Oct 20 08:57:35 2010"
+  Creator		  "gvallabh"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "gcampa"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jul 04 10:59:41 2011"
+  RTWModifiedTimeStamp	  231677942
+  ModelVersionFormat	  "1.%<AutoIncrement:61>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      "M-S-Function"
+      FunctionName	      "mlfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "arduino_io_lib"
+    Location		    [28, 81, 687, 705]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Arduino Analog Read"
+      Ports		      [0, 1]
+      Position		      [245, 156, 345, 214]
+      FunctionName	      "msfun_arduino_analogread"
+      Parameters	      "arduinoVar, arduinoPin, T"
+      MaskType		      "Arduino IO Analog Read"
+      MaskDescription	      "Every time this block is executed it asks the server program running on the Arduino to perform an analog input on (that is read the voltage from) a given pin, and to return the value (0 to 1023) via serial port. This value is then set as the output of the block.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the analog input pin (0 to 5) where the analog input needs to be performed. The last parameter is the sample time.\n\nSee the help for more details."
+      MaskHelp		      "Every time this block is executed it asks the server program running on the Arduino to perform an analog input on (that is read the voltage from) a given pin, and to return the value (0 to 1023) via serial port. This value is then set as the output of the block.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the analog input pin (0 to 5) where the analog input needs to be performed.\n\nNote that the analog input pins 0 to 5 are also known as digital pins from 14 to 19, and are located on the lower right corner of the board. Specifically, analog input pin 0 corresponds to digital pin 14, and analog input pin 5 corresponds to digital pin 19. Performing analog input does   not affect the digital state (high, low, digital input) of the pin. The last parameter is the sample time.\n\nThe returned value, ranges from 0 to 1023, with 0 corresponding to an input voltage of 0 volts, and 1023 to a reference value that is typically 5 volts (this voltage can be set up by the analogReference function). Therefore, assuming a range from 0 to 5 V the resolution is .0049 volts (4.9 mV) per unit.\n\nThe corresponding ArduinoIO method is \"analogRead\", so you can type \"doc arduino.analogRead\" or \"help arduino.analogRead\" for more details."
+      MaskPromptString	      "Arduino Unit|Pin|Sample Time (-1 for inherited):"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(0|1|2|3|4|5),edit"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "arduinoVar=&1;arduinoPin=&2;T=@3;"
+      MaskDisplay	      "fprintf('%s\\nAnalog Read\\nPin %s', arduinoVar, arduinoPin)\ncolor('gray')\nplot(0:0.02:1, 0.5+(sin([0:0.02:1]*2*pi)/2))\n\n\n\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|0|0.2"
+      MaskTabNameString	      ",,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Arduino Analog Write"
+      Ports		      [1]
+      Position		      [525, 156, 625, 214]
+      FunctionName	      "msfun_arduino_analogwrite"
+      Parameters	      "arduinoVar, arduinoPin, T"
+      MaskType		      "Arduino IO analog Write (PWM)"
+      MaskDescription	      "Every time this block is executed it gets the value (0 to 255) at its input and sends to the server program running on the Arduino a command to set that value as the analog (PWM) output of a given pin.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the pin (3,5,6,9,10,11) where the analog output needs to be performed. The last parameter is the sample time.\n\nSee the help for more details."
+      MaskHelp		      "Every time this block is executed it gets the value (0 to 255) at its input and sends to the server program running on the Arduino a command to set that value as the analog (PWM) output of a given pin.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the pin (3,5,6,9,10,11) where the analog output needs to be performed. The last parameter is the sample time.\n\nNote that the digital pins from 0 to 13 are located on the upper right part of the board. \n\nThe corresponding ArduinoIO method is \"analogWrite\", so you can type \"doc arduino.analogWrite\" or \"help arduino.analogWrite\" for more details."
+      MaskPromptString	      "Arduino Unit|Pin|Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(3|5|6|9|10|11),edit"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "arduinoVar=&1;arduinoPin=&2;T=@3;"
+      MaskDisplay	      "patch(0:0.05:1, 0.5+(sin([0:0.05:1]*2*pi)/2), [0.8 0.8 0.8])\nfprintf('%s\\nAnalog Write\\nPin %s', arduinoVar, arduinoPin)\n\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|3|0.2"
+      MaskTabNameString	      ",,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Arduino Digital Read"
+      Ports		      [0, 1]
+      Position		      [115, 156, 215, 214]
+      FunctionName	      "msfun_arduino_digitalread"
+      Parameters	      "arduinoVar, arduinoPin, T"
+      MaskType		      "Arduino IO digital read"
+      MaskDescription	      "Every time this block is executed it asks the server program running on the Arduino to perform a digital input on (that is read a high or low voltage value from) a given pin, and to return the value (0 or 1) via serial port. This value is then set as the output of the block.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the pin (2 to 13) where the digital input needs to be performed. The last parameter is the sample time.\n\nSee the help for more details."
+      MaskHelp		      "Every time this block is executed it asks the server program running on the Arduino to perform a digital input on (that is read a high or low voltage value from) a given pin, and to return the value (0 tor 1) via serial port. This value is then set as the output of the block.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the pin (2 to 13) where the digital input needs to be performed. The last parameter is the sample time.\n\nNote that the digital pins from 0 to 13 are located on the upper right part of the board, while the digital pins from 14 to 19 are better known as \"analog input\" pins and are located in the lower right corner of the board.\n\nThe corresponding ArduinoIO method is \"digitalRead\", so you can type \"doc arduino.digitalRead\" or \"help arduino.digitalRead\" for more details."
+      MaskPromptString	      "Arduino Unit|Pin|Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19),edit"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "arduinoVar=&1;arduinoPin=&2;T=@3;"
+      MaskDisplay	      "fprintf('%s\\nDigital Read\\nPin %s', arduinoVar, arduinoPin)\ncolor('gray')\nplot([0 0.25 0.25 0.5 0.5 0.75], [0 0 0.9 0.9 0 0])\n\n\n\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|2|0.2"
+      MaskTabNameString	      ",,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Arduino Digital Write"
+      Ports		      [1]
+      Position		      [395, 156, 495, 214]
+      FunctionName	      "msfun_arduino_digitalwrite"
+      Parameters	      "arduinoVar, arduinoPin, T"
+      MaskType		      "Arduino IO digital Write"
+      MaskDescription	      "Every time this block is executed it gets the value (0 or 1) at its input and sends to the server program running on the Arduino a command to set that value as the digital output of a given pin.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the pin (2 to 13) where the digital output needs to be performed. The last parameter is the sample time.\n\nSee the help for more details."
+      MaskHelp		      "Every time this block is executed it gets the value (0 or 1) at its input and sends to the server program running on the Arduino a command to set that value as the digital output of a given pin.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the pin (2 to 13) where the digital output needs to be performed. The last parameter is the sample time.\n\nNote that the digital pins from 0 to 13 are located on the upper right part of the board, while the digital pins from 14 to 19 are better known as \"analog input\" pins and are located in the lower right corner of the board.\n\nThe corresponding ArduinoIO method is \"digitalWrite\", so you can type \"doc arduino.digitalWrite\" or \"help arduino.digitalWrite\" for more details."
+      MaskPromptString	      "Arduino Unit|Pin|Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19),edit"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "arduinoVar=&1;arduinoPin=&2;T=@3;"
+      MaskDisplay	      "patch([0 0.25 0.25 0.5 0.5 0.75], [0 0 0.9 0.9 0 0], [0.8 0.8 0.8])\nfprintf('%s\\nDigital Write\\nPin %s', arduinoVar, arduinoPin)\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|3|0.2"
+      MaskTabNameString	      ",,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Arduino IO Setup"
+      Ports		      []
+      Position		      [115, 64, 217, 121]
+      Priority		      "3"
+      FunctionName	      "msfun_arduino_io_setup"
+      Parameters	      "arduinoVar, comPort"
+      MaskType		      "Arduino IO Setup"
+      MaskDescription	      "This block instantiates a single arduino object before the simulation starts. The object is then used by the other Arduino IO blocks in the simulink model and is deleted at the end of the simulation.\n\nThe first mask parameter is the name of the arduino object and the second is the serial port which is connected to (e.g. 'COM5' or 'COM8' on Windows, '/dev/ttyS101' on Unix, or 'DEMO' for demo mode). \n\nMake sure that the port is not already used by the IDE or by MATLAB (e.g. by a valid arduino object in the workspace), so that Simulink can use the serial connection."
+      MaskHelp		      "This block instantiates an arduino object before the simulation starts. The object is then used by the other Arduino IO blocks in the simulink model and is deleted at the end of the simulation.\n<p>\nThe first mask parameter is the name of the arduino object and the second is the serial port which is connected to (e.g. 'COM5' or 'COM8' on Windows, or '/dev/ttyS101' on Unix). \n<p>\nMake sure that the port is not already used by the IDE or by MATLAB (e.g. by a valid arduino object in the workspace), so that Simulink can use the serial connection.\n<p>\nIf you have multiple Arduino boards connected to your computer, you must use a different setup block for each of them."
+      MaskPromptString	      "Arduino Unit|Serial (COM) port"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),edit"
+      MaskTunableValueString  "off,off"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskVarAliasString      ","
+      MaskVariables	      "arduinoVar=&1;comPort=&2;"
+      MaskDisplay	      "fprintf('Setup\\n%s\\n%s', arduinoVar, comPort)\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Arduino1|DEMO"
+      MaskTabNameString	      ","
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "DC Motor"
+      Ports		      [2]
+      Position		      [395, 346, 495, 404]
+      FunctionName	      "msfun_arduino_dcmotor"
+      Parameters	      "arduinoVar, motorNum, sendOnChange, T"
+      MaskType		      "Arduino IO DC Motor"
+      MaskDescription	      "Every time this block is executed it sends to the server program running on the Arduino a command to set direction and speed of a given DC motor.\n\nThe first input is the direction (mode) of the motor (positive=forward, 0=release, negative=backward), while the second input is the desired speed (0 to 255, for negative numbers only the magnitude is considered).\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the motor (1 to 4). The third parameter is a checkbox that when checked causes the block to send motor commands only when inputs change. The last parameter is the sample time."
+      MaskHelp		      "Every time this block is executed it sends to the server program running on the Arduino a command to set direction and speed of a given DC motor.\n\nThe first input is the direction (mode) of the motor (positive=forward, 0=release, negative=backward), while the second input is the desired speed (0 to 255, for negative numbers only the magnitude is considered).\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the motor (1 to 4). The third parameter is a checkbox that when checked casues the block to send motor commands only when inputs change. The last parameter is the sample time.\n\nSee also arduino.motorRun and arduino.motorSpeed for more details."
+      MaskPromptString	      "Arduino Unit|Motor number|Send motor commands only when inputs change |Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(1|2|3|4),checkbox,edit"
+      MaskTunableValueString  "off,off,off,off"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "arduinoVar=&1;motorNum=&2;sendOnChange=@3;T=@4;"
+      MaskDisplay	      "port_label('input', 1, 'Dir')\nport_label('input', 2, 'Spd')\nfprintf('%s\\nDC Motor (#%s)', arduinoVar, motorNum)\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|3|on|0.2"
+      MaskTabNameString	      ",,,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Real-Time Pacer"
+      Ports		      []
+      Position		      [525, 64, 627, 121]
+      FunctionName	      "msfun_realtime_pacer"
+      Parameters	      "simTimePerRealTime"
+      MaskType		      "RealTime_Pacer"
+      MaskDescription	      "Slow down a simulation to track real (i.e., wall clock) elapsed time. \n\n\"Speedup\" specifies the ratio between simulation time and real time \n Speedup = N => N sec. of simulation time per sec. of real time\n Speedup can be fractional (e.g., 0.5, 1.3). \n Speedup = inf => allow simulation to run at full speed\n\nClick on the Help button for details."
+      MaskHelp		      "web('realtime_pacer_help.html', '-helpbrowser')"
+      MaskPromptString	      "Speedup (Simulation Time / Real Time):"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "simTimePerRealTime=@1;"
+      MaskDisplay	      "fprintf('Real-Time Pacer\\nSpeedup = %g', simTimePerRealTime)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run command file 1"
+      Ports		      []
+      Position		      [145, 575, 240, 612]
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "blink_challenge_sf"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Stateflow \\nBlink Challenge')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Run command file 1"
+	Location		[61, 382, 169, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run command file 2"
+      Ports		      []
+      Position		      [145, 525, 240, 562]
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "blink_challenge_sim"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Simulink \\nBlink Challenge')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Run command file 2"
+	Location		[61, 382, 169, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run command file 3"
+      Ports		      []
+      Position		      [265, 525, 360, 562]
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "servo_sim"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Servo\\n Read & Write')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Run command file 3"
+	Location		[61, 382, 169, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run command file 4"
+      Ports		      []
+      Position		      [380, 525, 475, 562]
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "motor_sim"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('DC Motor\\n Example')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Run command file 4"
+	Location		[61, 382, 169, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run command file 5"
+      Ports		      []
+      Position		      [495, 525, 590, 562]
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "stepper_sim"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Stepper Motor\\n Example')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Run command file 5"
+	Location		[61, 382, 169, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Run command file 6"
+      Ports		      []
+      Position		      [30, 525, 125, 562]
+      DropShadow	      on
+      ShowName		      off
+      OpenFcn		      "blink_led_sim"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Pin 13\\n Blink Led')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Run command file 6"
+	Location		[61, 382, 169, 457]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Servo Read"
+      Ports		      [0, 1]
+      Position		      [115, 251, 215, 309]
+      FunctionName	      "msfun_arduino_servoread"
+      Parameters	      "arduinoVar, servoNum, T"
+      MaskType		      "Arduino IO Servo Read"
+      MaskDescription	      "Every time this block is executed it asks the server program running on the Arduino to read the angle of a given servo, and to return the value in degrees (0 to 180) via serial port. This value is then set as the output of the block.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the servo (1 for the \"outside\" one or 2 for the \"inside\" one). The last parameter is the sample time."
+      MaskHelp		      "Every time this block is executed it asks the server program running on the Arduino to read the angle of a given servo, and to return the value in degrees (0 to 180) via serial port. This value is then set as the output of the block.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the servo (1 for the \"outside\" one or 2 for the \"inside\" one). The last parameter is the sample time.\n\nAlso see \"doc arduino.servoRead\" or \"help arduino.servoRead\" for more details."
+      MaskPromptString	      "Arduino Unit|Servo #|Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(1|2),edit"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "arduinoVar=&1;servoNum=&2;T=@3;"
+      MaskDisplay	      "fprintf('%s\\nServo Read (#%s)', arduinoVar, servoNum)\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|1|0.2"
+      MaskTabNameString	      ",,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Servo Write"
+      Ports		      [1]
+      Position		      [395, 251, 495, 309]
+      FunctionName	      "msfun_arduino_servowrite"
+      Parameters	      "arduinoVar, servoNum, T"
+      MaskType		      "Arduino IO servo Write"
+      MaskDescription	      "Every time this block is executed it gets the value (0 to 180) at its input and sends to the server program running on the Arduino a command to set that value as the angle of a given servo.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the servo (1 for the \"outside\" one or 2 for the \"inside\" one). The last parameter is the sample time."
+      MaskHelp		      "Every time this block is executed it gets the value (0 to 180) at its input and sends to the server program running on the Arduino a command to set that value as the angle of a given servo.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the servo (1 for the \"outside\" one or 2 for the \"inside\" one). The last parameter is the sample time.\n\nAlso see \"doc arduino.servoWrite\" or \"help arduino.servoWrite\" for more details."
+      MaskPromptString	      "Arduino Unit|Servo #|Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(1|2),edit"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "arduinoVar=&1;servoNum=&2;T=@3;"
+      MaskDisplay	      "fprintf('%s\\nServo Write (#%s)', arduinoVar, servoNum)\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|1|0.2"
+      MaskTabNameString	      ",,"
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      Name		      "Stepper Motor"
+      Ports		      [3]
+      Position		      [525, 346, 625, 404]
+      FunctionName	      "msfun_arduino_stepper"
+      Parameters	      "arduinoVar, motorNum, motionStyle, sendOnChange, T"
+      MaskType		      "Arduino IO Stepper Motor"
+      MaskDescription	      "Every time this block is executed it sends to the server program running on the Arduino a command to advance a given stepper motor by a given number of steps.\n\nThe first input is the direction (mode) of the motor (positive=forward, 0=release, negative=backward), while the second input is the desired speed (0 to 255, for negative numbers only the magnitude is considered), and the third is the number of desired steps (0 to 255) the stepper advances every time the block executes.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the stepper motor (1 or 2). The third parameter is the motion style (single,double,interleave,microstep). The fourth parameter is a checkbox that when checked casues the block to send speed commands only when the velocity input changes. The last parameter is the sample time."
+      MaskHelp		      "Every time this block is executed it sends to the server program running on the Arduino a command to advance a given stepper motor by a given number of steps.\n\nThe first input is the direction (mode) of the motor (positive=forward, 0=release, negative=backward), while the second input is the desired speed (0 to 255, for negative numbers only the magnitude is considered), and the third is the number of desired steps (0 to 255) the stepper advances every time the block executes.\n\nThe first parameter in the mask is the name of the Arduino object (which must match the one chosen in the Setup block). The second parameter is the number of the stepper motor (1 or 2). The third parameter is the motion style (single,double,interleave,microstep). The fourth parameter is a checkbox that when checked casues the block to send speed commands only when the velocity input changes. The last parameter is the sample time.\n\nSee also arduino.stepperSpeed and arduino.stepperStep for more details."
+      MaskPromptString	      "Arduino Unit|Stepper Motor number|Motion Style|Send speed commands only when velocity input changes|Sample Time (-1 for inherited)"
+      MaskStyleString	      "popup(Arduino1|Arduino2|Arduino3|Arduino4),popup(1|2),popup(single    |double    |interleave|microstep ),checkbox,edit"
+      MaskTunableValueString  "off,off,on,off,off"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "arduinoVar=&1;motorNum=&2;motionStyle=&3;sendOnChange=@4;T=@5;"
+      MaskDisplay	      "port_label('input', 1, 'Dir')\nport_label('input', 2, 'Spd')\nport_label('input', 3, 'Stp')\nfprintf('%s\\nStepper\\nMotor (#%s)', arduinoVar, motorNum)\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Arduino1|1|single|on|0.2"
+      MaskTabNameString	      ",,,,"
+    }
+    Annotation {
+      Name		      "SETUP\nBLOCK"
+      Position		      [28, 78]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "Simulink Library For the Arduino IO Package"
+      Position		      [218, 29]
+      TeXMode		      "on"
+      FontName		      "@Arial Unicode MS"
+      FontSize		      20
+    }
+    Annotation {
+      Name		      "ANALOG IO\nAND \nDIGITAL IO\nBLOCKS"
+      Position		      [28, 183]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "MOTOR \nSHIELD:\n\nSERVO\nBLOCKS"
+      Position		      [28, 278]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "MOTOR \nSHIELD:\n\nMOTOR\nBLOCKS"
+      Position		      [28, 373]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "NOTE: These blocks do not support code generation. For generating code that will run autonomously on the Arduino, use \nthe Simulink Support Package for Arduino, http://www.mathworks.com/academia/arduino-software/arduino-simulink.html,\n(also known as Arduino Target). Copyright 2010, The MathWorks, Inc. "
+      Position		      [32, 452]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "REALTIME\nPACER\nBLOCK"
+      Position		      [398, 83]
+      HorizontalAlignment     "left"
+    }
+    Annotation {
+      Name		      "Examples"
+      Position		      [73, 499]
+      TeXMode		      "on"
+      FontName		      "@Arial Unicode MS"
+      FontSize		      20
+    }
+  }
+}
